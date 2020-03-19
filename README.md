@@ -77,3 +77,14 @@ module.exports = {
 如果需要指定用其他的配置文件来进行打包如other.config.js
 
 则使用`npx webpack --config other.config.js`即可
+
+
+
+另外，在package.json 中的 script中添加 默认调用了npx可以使用node_modules中的相关指令
+
+![image-20200319212304847](/Users/sedationh/Library/Application Support/typora-user-images/image-20200319212304847.png)
+
+后，可以在命令行使用`yarn bundle` 进行快速打包
+
+![image-20200319212402230](http://picbed.sedationh.cn/image-20200319212402230.png)
+
