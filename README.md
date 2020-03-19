@@ -52,3 +52,28 @@ export default function Content() {
 
 ![image-20200319205726424](http://picbed.sedationh.cn/image-20200319205726424.png)
 
+## 使用Webpack的配置文件
+
+```js
+// webpack.config.js
+
+const path = require('path')
+
+module.exports = {
+  entry: './index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'bundle')
+  }
+}
+```
+
+![image-20200319210633710](http://picbed.sedationh.cn/image-20200319210633710.png)
+
+`path: path.resolve(__dirname, 'bundle')`使得输出文件夹为web pack.config.js所在文件夹中的bundle文件夹
+
+
+
+如果需要指定用其他的配置文件来进行打包如other.config.js
+
+则使用`npx webpack --config other.config.js`即可
