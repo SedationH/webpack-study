@@ -82,9 +82,34 @@ module.exports = {
 
 另外，在package.json 中的 script中添加 默认调用了npx可以使用node_modules中的相关指令
 
-![image-20200319212304847](/Users/sedationh/Library/Application Support/typora-user-images/image-20200319212304847.png)
+![image-20200319212304847](http://picbed.sedationh.cn/image-20200319212304847.png)
 
 后，可以在命令行使用`yarn bundle` 进行快速打包
 
 ![image-20200319212402230](http://picbed.sedationh.cn/image-20200319212402230.png)
 
+### 补充
+
+![image-20200319213912654](http://picbed.sedationh.cn/image-20200319213912654.png)
+
+要解决这个，添加mode即可 dev & pro 只是压缩与否的区别
+
+```js
+// webpack.config.js
+const path = require('path')
+
+module.exports = {
+  mode: 'development',
+  entry: {
+    main: './src/index.js'
+  },
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+}
+```
+
+![image-20200319214221051](http://picbed.sedationh.cn/image-20200319214221051.png)
+
+提示中main的由来看enrty的完全书写形式
