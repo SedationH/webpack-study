@@ -113,3 +113,35 @@ module.exports = {
 ![image-20200319214221051](http://picbed.sedationh.cn/image-20200319214221051.png)
 
 提示中main的由来看enrty的完全书写形式
+
+
+
+## Loader
+
+对于除了js文件以外的文件导入，如果还需要导入其他类型文件，就需要在config中配置Loader
+
+```js
+const path = require('path')
+
+module.exports = {
+  mode: 'development',
+  entry: {
+    main: './src/index.js'
+  },
+  module: {
+    rules: [{
+      test: /\.png$/,
+      use: {
+        loader: 'file-loader'
+      }
+    }]
+  },
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+}
+```
+
+![image-20200320102054821](http://picbed.sedationh.cn/image-20200320102054821.png)
+

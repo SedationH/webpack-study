@@ -118,7 +118,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _content__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./content */ \"./src/content.js\");\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ \"./src/header.js\");\n\n\n\nnew _content__WEBPACK_IMPORTED_MODULE_0__[\"default\"]()\nnew _header__WEBPACK_IMPORTED_MODULE_1__[\"default\"]()\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _content__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./content */ \"./src/content.js\");\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ \"./src/header.js\");\n/* harmony import */ var _pic_1_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pic-1.png */ \"./src/pic-1.png\");\n\n\n\n\nnew _content__WEBPACK_IMPORTED_MODULE_0__[\"default\"]()\nnew _header__WEBPACK_IMPORTED_MODULE_1__[\"default\"]()\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/pic-1.png":
+/*!***********************!*\
+  !*** ./src/pic-1.png ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"676c6702869ca548b1de6c5880302378.png\");\n\n//# sourceURL=webpack:///./src/pic-1.png?");
 
 /***/ })
 
