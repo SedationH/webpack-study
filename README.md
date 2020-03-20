@@ -241,7 +241,31 @@ https://webpack.js.org/loaders/sass-loader/
 
 ![image-20200320120054121](http://picbed.sedationh.cn/image-20200320120054121.png)
 
-### 自动添加厂商前缀
+
+
+## plugin使用
+
+可以让webpack运行在某个时刻自动执行，插件放的顺序无所谓
+
+
+
+### HtmlWebpackPlugin
+
+https://webpack.js.org/plugins/html-webpack-plugin/
+
+
+
+可以按照需要自动在dist目录中生成index,可以在参数中配置生成文件的模版，再在模版的基础上添加`<script src="bundle"></script>`
+
+
+
+### Clean plugin for webpack
+
+https://github.com/johnagan/clean-webpack-plugin
+
+
+
+把原来的文件先清除再生成
 
 
 
