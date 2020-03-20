@@ -208,6 +208,8 @@ module: {
 
 config中有配置
 
+注意，loader的配置是有顺序的，**从下到上，从右到左**
+
 ```js
 module: {
     rules: [{
@@ -230,4 +232,16 @@ module: {
 css-loader帮助我们合并相互@import的css文件为一个文件，style-loader将这个文件挂载到head上
 
 ![image-20200320112756359](http://picbed.sedationh.cn/image-20200320112756359.png)
+
+
+
+如果我们要使用sass
+
+https://webpack.js.org/loaders/sass-loader/
+
+![image-20200320120054121](http://picbed.sedationh.cn/image-20200320120054121.png)
+
+### 自动添加厂商前缀
+
+
 

@@ -1,5 +1,5 @@
 import pic from './pic-1.png'
-import './index.css'
+import './index.scss'
 
 const img = new Image()
 img.src = pic
