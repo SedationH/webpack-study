@@ -9,10 +9,11 @@ module.exports = {
     rules: [{
       test: /\.png$/,
       use: {
-        loader: 'file-loader',
+        loader: 'url-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: 'images'
+          outputPath: 'images',
+          limit: 20480
         }
       }
     }]

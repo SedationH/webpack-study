@@ -174,3 +174,33 @@ module: {
 
 其他具体看文档
 
+### url-loader
+
+Url-loader可以实现file-loader的所有功能，并加强
+
+图片可以被转化为base64不需要再进行图片文件请求，但是js文件变大了
+
+![image-20200320110011348](http://picbed.sedationh.cn/image-20200320110011348.png)
+
+权衡下
+
+对于图片文件的导入可以设置limit限制图片大小，如小于20kb，进行base64转换，否者正常文件导入
+
+```js
+module: {
+    rules: [{
+      test: /\.png$/,
+      use: {
+        loader: 'url-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'images',
+          limit: 20480
+        }
+      }
+    }]
+  },
+```
+
+
+
