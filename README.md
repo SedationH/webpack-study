@@ -145,3 +145,32 @@ module.exports = {
 
 ![image-20200320102054821](http://picbed.sedationh.cn/image-20200320102054821.png)
 
+
+
+### file-loader
+
+https://webpack.js.org/loaders/file-loader/
+
+
+
+如果想要对打包生成的文件名字进行配置,产生文件的位置配置	
+
+```js
+module: {
+    rules: [{
+      test: /\.png$/,
+      use: {
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'images'
+        }
+      }
+    }]
+  },
+```
+
+![image-20200320104457376](http://picbed.sedationh.cn/image-20200320104457376.png)
+
+其他具体看文档
+
