@@ -204,3 +204,30 @@ module: {
 
 
 
+### 通过loader引入样式
+
+config中有配置
+
+```js
+module: {
+    rules: [{
+      test: /\.png$/,
+      use: {
+        loader: 'url-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'images',
+          limit: 20480
+        }
+      }
+    }, {
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader']
+    }]
+  },
+```
+
+css-loader帮助我们合并相互@import的css文件为一个文件，style-loader将这个文件挂载到head上
+
+![image-20200320112756359](http://picbed.sedationh.cn/image-20200320112756359.png)
+
