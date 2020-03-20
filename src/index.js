@@ -1,6 +1,7 @@
-import Content from './content'
-import Header from './header'
-import './pic-1.png'
+import pic from './pic-1.png'
 
-new Content()
-new Header()
+const img = new Image()
+img.src = pic
+
+const root = document.getElementById('root')
+root.append(img)

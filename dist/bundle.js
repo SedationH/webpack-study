@@ -86,30 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/content.js":
-/*!************************!*\
-  !*** ./src/content.js ***!
-  \************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Content; });\nfunction Content() {\n  const dom = document.getElementById('root')\n  const ele = document.createElement('div')\n  ele.innerText = 'content'\n}\n\n//# sourceURL=webpack:///./src/content.js?");
-
-/***/ }),
-
-/***/ "./src/header.js":
-/*!***********************!*\
-  !*** ./src/header.js ***!
-  \***********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return header; });\nfunction header() {\n  const dom = document.getElementById('root')\n  const ele = document.createElement('div')\n  ele.innerText = 'header'\n  dom.append(ele)\n}\n\n//# sourceURL=webpack:///./src/header.js?");
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -118,7 +94,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _content__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./content */ \"./src/content.js\");\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header */ \"./src/header.js\");\n/* harmony import */ var _pic_1_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pic-1.png */ \"./src/pic-1.png\");\n\n\n\n\nnew _content__WEBPACK_IMPORTED_MODULE_0__[\"default\"]()\nnew _header__WEBPACK_IMPORTED_MODULE_1__[\"default\"]()\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pic_1_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pic-1.png */ \"./src/pic-1.png\");\n\n\nconst img = new Image()\nimg.src = _pic_1_png__WEBPACK_IMPORTED_MODULE_0__[\"default\"]\n\nconst root = document.getElementById('root')\nroot.append(img)\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
