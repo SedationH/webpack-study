@@ -269,3 +269,44 @@ https://github.com/johnagan/clean-webpack-plugin
 
 
 
+## SourceMap
+
+https://webpack.js.org/configuration/devtool/#devtool
+
+Choose a style of [source mapping](http://blog.teamtreehouse.com/introduction-source-maps) to enhance the debugging process. These values can affect build and rebuild speed dramatically.
+
+
+
+简单来说，source-map是用来建立文件映射的（src文件与dist文件），方便在进行代码纠错
+
+
+
+通过
+
+![image-20200325165141061](http://picbed.sedationh.cn/image-20200325165141061.png)
+
+可以控制source-map的模式
+
+常见的前缀与其含义
+
+1. 无前缀 'source-map'  同级生成'main.js.map'文件进行映射关系构建
+2. inline 'inline-source-map' 不生产map文件，直接在main.js通过加入base64直接构建映射关系
+3. cheap 'cheap-inline-source-map' 
+   1. 不需要告诉我在哪一列出了问题，只用告诉我行数
+   2. 不需要告诉我出了src业务代码之外的问题(第三方使用，loader，etc.)
+4. modlue 'cheap-module-inline-source-map' 告诉我src+以外的问题
+5. eveal 'eveal' 在导出文件中通过eveal语句构建映射   =>  比较快，可能会出问题
+
+
+
+![image-20200325170141530](http://picbed.sedationh.cn/image-20200325170141530.png)
+
+
+
+❤️❤️❤️最佳实践
+
+
+
+if dev => `eval-cheap-module-source-map`
+
+If pro => `cheap-module-source-map`
