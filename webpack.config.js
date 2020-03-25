@@ -27,7 +27,8 @@ module.exports = {
     }]
   },
   output: {
-    filename: 'bundle.js',
+    // 会根据entry中main： ‘文件’的main来作为name，[name]是占位符
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [
