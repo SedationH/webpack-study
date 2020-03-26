@@ -365,7 +365,7 @@ app.listen(3000,() => {
 
 
 
-### 方法三 DevServe (推荐)❤️
+### 方法三 DevServer (推荐)❤️
 
 https://webpack.js.org/configuration/dev-server/
 
