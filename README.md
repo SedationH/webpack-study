@@ -383,7 +383,7 @@ https://webpack.js.org/configuration/dev-server/
 
 
 
-⚠️没有dist文件生成了
+⚠️没有dist文件生成了，直接放在了内存里，加快了打包速度
 
 
 
@@ -403,3 +403,38 @@ https://webpack.js.org/configuration/dev-server/
 
 ![image-20200326164810215](http://picbed.sedationh.cn/image-20200326164810215.png)
 
+### 应用场景二 模块化开发JS
+
+改变Num的值，不会影响已经因为点击修改的上方数字的值
+
+![image-20200326171618592](http://picbed.sedationh.cn/image-20200326171618592.png)
+
+
+
+### 具体配置
+
+在`webpack.config.js`中
+
+```js
+// 引入包
++const webpack = require('webpack')
+
+devServer: {
+    port: 3000,
+    open: true,
++   hot: true,
+    // 即使HMR没有成功，也不要自动刷新页面
++    hotOnly: true
+  },
+plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    }),
+    new CleanWebpackPlugin(),
++   new webpack.HotModuleReplacementPlugin()
+  ]
+```
+
+
+
+其实css的HMR也需要进行配置，不过因为相关loader在底层自己实现了，react也是类似的

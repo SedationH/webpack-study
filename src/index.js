@@ -1,11 +1,12 @@
-import './style.css'
+import Add from './add'
+import Num from './num'
 
-const btn = document.createElement('button')
-btn.innerHTML = 'ADD'
-document.body.appendChild(btn)
+Add()
+Num()
 
-btn.onclick = function() {
-  const div = document.createElement('div')
-  div.innerHTML = 'Item'
-  document.body.appendChild(div)
+if (module.hot) {
+  module.hot.accept('./num', function () {
+    document.body.removeChild(document.getElementById('num'))
+    Num()
+  })
 }
