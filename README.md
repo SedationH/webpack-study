@@ -391,3 +391,15 @@ https://webpack.js.org/configuration/dev-server/
 
 ![image-20200326160749894](http://picbed.sedationh.cn/image-20200326160749894.png)
 
+
+
+## Hot Module Replacement 热模块更新
+
+
+
+### 应用场景一 CSS样式调试，防止页面频繁刷新
+
+在更改css文件后，因为文件更改，webpack会自动刷新整个页面，但是使用HMR
+
+![image-20200326164810215](http://picbed.sedationh.cn/image-20200326164810215.png)
+

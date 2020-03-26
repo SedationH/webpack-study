@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack')
 
 module.exports = {
   mode: 'development',
@@ -10,7 +11,10 @@ module.exports = {
   },
   devServer: {
     port: 3000,
-    open: true
+    open: true,
+    hot: true,
+    // 即使HMR没有成功，也不要自动刷新页面
+    hotOnly: true
   },
   module: {
     rules: [{
@@ -40,5 +44,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
-    new CleanWebpackPlugin()]
+    new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 }
