@@ -310,3 +310,84 @@ Choose a style of [source mapping](http://blog.teamtreehouse.com/introduction-so
 if dev => `eval-cheap-module-source-map`
 
 If pro => `cheap-module-source-map`
+
+
+
+
+
+## 实现打包自动化与文件变动监控
+
+### 方法一  Command Line Interface
+
+https://webpack.js.org/api/cli/#watch-options
+
+
+
+![image-20200326154714932](http://picbed.sedationh.cn/image-20200326154714932.png)
+
+
+
+这样修改了源文件，在浏览器中进行刷新即可，不需要再进行手动bundle
+
+
+
+### 方法二 Node Interface
+
+https://webpack.js.org/api/node/
+
+
+
+通过与express搭配，在node中自己实现热更新
+
+
+
+参考代码
+
+在`webpack.config.js`同级目录下创建
+
+server.js
+
+```js
+const express = require("express")
+const webpack = require("webpack")
+const webpackDevMiddleware("webpack-dev-middleware")
+const config = require("./webpack.config.js")
+const compier = webpack(config)
+
+const app = express()
+
+app.use(webpackDevMiddleware(compier));
+
+app.listen(3000,() => {
+  console.log('server start at port 3000')
+})
+```
+
+
+
+### 方法三 DevServe (推荐)❤️
+
+https://webpack.js.org/configuration/dev-server/
+
+
+
+先要安装，然后配置
+
+```json
+"scripts": {
+    "bundle": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server"
+  },
+```
+
+
+
+⚠️没有dist文件生成了
+
+
+
+在`webpack.config.js`中进行进一步的配置
+
+![image-20200326160749894](http://picbed.sedationh.cn/image-20200326160749894.png)
+
