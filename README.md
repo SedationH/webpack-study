@@ -524,3 +524,45 @@ yarn add @babel/polyfill
 
 
 
+### 开发第三方库、类库、UI组件库的时候，闭包注入
+
+
+
+https://babeljs.io/docs/en/babel-plugin-transform-runtime
+
+
+
+```
+yarn add -D @babel/plugin-transform-runtime
+```
+
+因为cores : 2
+
+```
+yarn add @babel/runtime-corejs2
+```
+
+
+
+配置
+
+.babelrc
+
+```
+{
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "absoluteRuntime": false,
+        "corejs": 2,
+        "helpers": true,
+        "regenerator": true,
+        "useESModules": false,
+        "version": "7.0.0-beta.0",
+      }
+    ]
+  ]
+}
+```
+
