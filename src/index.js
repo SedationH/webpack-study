@@ -1,12 +1,10 @@
-import Add from './add'
-import Num from './num'
+import '@babel/polyfill'
 
-Add()
-Num()
+const arr = [
+  new Promise(() => {}),
+  new Promise(() => {})
+]
 
-if (module.hot) {
-  module.hot.accept('./num', function () {
-    document.body.removeChild(document.getElementById('num'))
-    Num()
-  })
-}
+arr.map(item => {
+  console.log(item)
+})

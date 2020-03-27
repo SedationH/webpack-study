@@ -438,3 +438,89 @@ plugins: [
 
 
 其实css的HMR也需要进行配置，不过因为相关loader在底层自己实现了，react也是类似的
+
+## Babel 配置
+
+### 正常业务场景（影响全局环境）
+
+https://babeljs.io/setup#installation
+
+
+
+```
+yarn add -D babel-loader @babel/core @babel/preset-env
+```
+
+前两个是bable转换的基础 第三个是一个对于ES2015+转换的预设
+
+相关的配置
+
+1. 要么在webpack中,对module -》 rules添加新的test规则
+
+```
+{
+  test: /\.js$/,
+  exclude: /node_modules/,
+  loader: "babel-loader",
+  options: {
+    "presets": [
+      ["@babel/preset-env", {
+        "targets": {
+        	// 如果高于这个浏览器版本就让浏览器自己支持，不进行转换
+          "chrome": "67"
+        },
+        "useBuiltIns": "usage"
+      }]
+    ]
+  }
+}
+```
+
+2. 要么在webpack.config.js同级目录下创建`.babelrc`文件
+
+```
+{
+  "presets": ["@babel/preset-env"]
+}
+```
+
+
+
+注意到，对于balel中presets的设置，是把预设变为[a preset,{}]再在后面的对象里进行配置
+
+
+
+这个时候，箭头函数等等之类的就会变成function...
+
+
+
+但是map、 Promise之类的还是没有变,引入**polyfill**来解决
+
+https://babeljs.io/docs/en/babel-polyfill
+
+```
+yarn add @babel/polyfill
+```
+
+
+
+再在index.js中`import "@babel/polyfill";`
+
+通过`"useBuiltIns": "usage"`可以按需求倒入
+
+
+
+这是不按需的
+
+![image-20200327162143751](http://picbed.sedationh.cn/image-20200327162143751.png)
+
+
+
+按需的
+
+
+
+![image-20200327162229496](http://picbed.sedationh.cn/image-20200327162229496.png)
+
+
+
