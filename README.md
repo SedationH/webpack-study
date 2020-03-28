@@ -504,9 +504,7 @@ yarn add @babel/polyfill
 
 
 
-再在index.js中`import "@babel/polyfill";`
-
-通过`"useBuiltIns": "usage"`可以按需求倒入
+通过`"useBuiltIns": "usage"`可以按需求导入，不需要在在index中导入`import "@babel/polyfill";`
 
 
 
@@ -600,4 +598,40 @@ yarn add react react-dom
 }
 ```
 
-注意先下后上进行执行、有顺序要求
+注意先下后上进行执行
+
+
+
+## Tree Shaking概念引入
+
+对于一些模块的使用，我们只使用了其中的部分功能
+
+
+
+如有
+
+math.js
+
+```js
+export const add = (a,b) {
+	console.log(a+b)
+}
+
+export const sub = (a,b) {
+  console.log(a-b)
+}
+```
+
+
+
+index.js
+
+```js
+import {add} from './math'
+```
+
+我们只使用了add，webpack通过Tree shaking来进行部分导入，注意，只对import导入规范起效果，对其他导入规范,如CommonJS是无效的
+
+
+
+默认在production是自动配置的
