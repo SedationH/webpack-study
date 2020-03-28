@@ -566,3 +566,38 @@ yarn add @babel/runtime-corejs2
 }
 ```
 
+
+
+## 实现对React框架代码的打包
+
+https://babeljs.io/docs/en/babel-preset-react
+
+
+
+```
+yarn add -D @babel/preset-react
+yarn add react react-dom
+```
+
+
+
+配置
+
+```json
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "chrome": "67"
+        },
+        "useBuiltIns": "usage"
+      }
+    ],
+    "@babel/preset-react"
+  ]
+}
+```
+
+注意先下后上进行执行、有顺序要求
